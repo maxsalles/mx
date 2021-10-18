@@ -72,8 +72,7 @@ export default class Host {
 
     for (const Aspect of this[PRIVATE].aspects) Aspect.setup?.(this, root)
 
-    iterateThroughDOM({
-      root,
+    iterateThroughDOM(root, {
       onEntering: currentElement => {
         for (const Aspect of this.aspectsFrom(currentElement)) {
           this.apply(currentElement, Aspect)
@@ -88,8 +87,7 @@ export default class Host {
     const { aspects, storage } = this[PRIVATE]
     const root = element || this[PRIVATE].root
 
-    iterateThroughDOM({
-      root: root,
+    iterateThroughDOM(root, {
       reverse: true,
       onEntering: currentElement => {
         const aspectInstances = storage.from(currentElement).values
