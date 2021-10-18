@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "lerna clean && lerna bootstrap && npm run build",
+    "build": "lerna run build",
+    "create-package": "node scripts/create-package-by-template.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxsalles/mx.git"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.1",
+    "ejs": "^3.1.6",
+    "inquirer": "^8.1.2",
+    "lerna": "^4.0.0",
+    "yargs": "^16.2.0"
+  }
+}
